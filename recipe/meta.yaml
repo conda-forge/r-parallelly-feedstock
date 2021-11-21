@@ -1,4 +1,4 @@
-{% set version = "1.28.1" %}
+{% set version = "1.29.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/parallelly_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/parallelly/parallelly_{{ version }}.tar.gz
-  sha256: f4ae883b18409adb83c561ed69427e740e1b50bf85ef57f48c3f2edf837cc663
+  sha256: 87f9eb3b1b549b94a9623c68a28bb9ce6554cf9e69a7e555abdb622c45a60429
 
 build:
   merge_build_host: true  # [win]
