@@ -1,4 +1,4 @@
-{% set version = "1.32.1" %}
+{% set version = "1.33.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/parallelly_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/parallelly/parallelly_{{ version }}.tar.gz
-  sha256: 31c685f59ac7ff702fe2720910780378113adf0df0baf048a62eef94524cca90
+  sha256: fc3acec506820b36ca0c89b237bd3ef0433e706813bce8ae0bd33a713bbbb97a
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
