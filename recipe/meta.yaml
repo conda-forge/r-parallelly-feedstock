@@ -1,4 +1,4 @@
-{% set version = "1.37.0" %}
+{% set version = "1.37.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,13 +10,13 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/parallelly_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/parallelly/parallelly_{{ version }}.tar.gz
-  sha256: 41e55e083e4250ddb336d14c6d8bd4d652b2cc4999a89d7228af97375574f9a7
+  sha256: df7e4eb18df8a30c87cc651bdc2e6ded20736c3484984facabb89a98e07a36a1
 
 build:
   merge_build_host: true  # [win]
   missing_dso_whitelist:
     - '*/R.dll'           # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
