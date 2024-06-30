@@ -1,6 +1,5 @@
 {% set version = "1.37.1" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-parallelly
@@ -13,10 +12,9 @@ source:
   sha256: df7e4eb18df8a30c87cc651bdc2e6ded20736c3484984facabb89a98e07a36a1
 
 build:
-  merge_build_host: true  # [win]
   missing_dso_whitelist:
     - '*/R.dll'           # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -25,7 +23,9 @@ requirements:
   build:
     - cross-r-base {{ r_base }}  # [build_platform != target_platform]
     - {{ compiler('c') }}        # [not win]
+    - {{ stdlib("c") }}          # [not win]
     - {{ compiler('m2w64_c') }}  # [win]
+    - {{ stdlib("m2w64_c") }}    # [win]
     - {{ posix }}filesystem      # [win]
     - {{ posix }}make
     - {{ posix }}sed             # [win]
@@ -35,7 +35,6 @@ requirements:
     - r-base
   run:
     - r-base
-    - {{ native }}gcc-libs       # [win]
 
 test:
   commands:
