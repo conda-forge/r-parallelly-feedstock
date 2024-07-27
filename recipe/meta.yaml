@@ -1,4 +1,4 @@
-{% set version = "1.37.1" %}
+{% set version = "1.38.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,12 +9,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/parallelly_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/parallelly/parallelly_{{ version }}.tar.gz
-  sha256: df7e4eb18df8a30c87cc651bdc2e6ded20736c3484984facabb89a98e07a36a1
+  sha256: 632c823c64d1bb840b2a5ff2cb2f5ffc743d62d5090a3cde55a2ebdde230d1aa
 
 build:
   missing_dso_whitelist:
     - '*/R.dll'           # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
