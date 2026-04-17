@@ -1,4 +1,4 @@
-{% set version = "1.46.1" %}
+{% set version = "1.47.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/parallelly_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/parallelly/parallelly_{{ version }}.tar.gz
-  sha256: 035344bc587cd813a2a4f4dcb88a756e939dff32c5628a10639359af1e72fb36
+  sha256: 88c0f4515c71dfe70c3b22f488daa55d4c410865e0885e2df71fb6e3877797c4
 
 build:
   missing_dso_whitelist:
@@ -45,9 +45,9 @@ about:
   home: https://parallelly.futureverse.org
   dev_url: https://github.com/HenrikBengtsson/parallelly
   license: LGPL-2.1-or-later
-  summary: Utility functions that enhance the 'parallel' package and support the built-in parallel backends of the 'future' package.  For example, availableCores() gives the number of CPU cores available to your R process as given by R options and environment variables, including those set by job schedulers on high-performance
-    compute clusters. If none is set, it will fall back to parallel::detectCores(). Another example is makeClusterPSOCK(), which is backward compatible with parallel::makePSOCKcluster() while doing a better job in setting up remote cluster workers without the need for configuring the firewall to do port-forwarding to your
-    local computer.
+  summary: Utility functions that enhance the 'parallel' package and support the built-in parallel backends of the 'future' package.  For example, availableCores() gives the number of CPU cores available to your R process as given by R options and environment variables, including those set by job schedulers on 
+    high-performance compute clusters. If none is set, it will fall back to parallel::detectCores(). Another example is makeClusterPSOCK(), which is backward compatible with parallel::makePSOCKcluster() while doing a better job in setting up remote cluster workers without the need for configuring the firewall to do 
+    port-forwarding to your local computer.
   license_family: LGPL
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/LGPL-2.1
