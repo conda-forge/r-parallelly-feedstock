@@ -1,4 +1,4 @@
-{% set version = "1.47.0" %}
+{% set version = "1.48.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/parallelly_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/parallelly/parallelly_{{ version }}.tar.gz
-  sha256: 88c0f4515c71dfe70c3b22f488daa55d4c410865e0885e2df71fb6e3877797c4
+  sha256: 58fe71ccee8e4dc95591958c5428c5000350937024373b99b258a76da0927636
 
 build:
   missing_dso_whitelist:
